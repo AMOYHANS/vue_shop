@@ -72,7 +72,7 @@ export default {
           //   title: "登录成功",
           //   message: "正在跳转！",
           // });
-          console.log(res)
+          // console.log(res)
           this.$message.success('正在跳转！')
           window.sessionStorage.setItem('token', res.data.token)
           this.$router.push('/home')

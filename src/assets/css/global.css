@@ -5,3 +5,22 @@ body,
     margin: 0;
     padding: 0;
 }
+
+.el-breadcrumb{
+    margin-bottom: 15px
+}
+
+.el-card{
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.3) !important;
+}
+
+.el-table{
+    margin-top: 15px;
+    font-size: 10px;
+}
+
+.el-pagination{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 15px;
+}

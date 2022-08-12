@@ -14,9 +14,21 @@ const router = new VueRouter({
             path: '/login',
             component: () => import('./components/Login')
         },
+
         {
             path: '/home',
-            component: () => import('./components/Home')
+            component: () => import('./components/Home'),
+            redirect: '/home/welcome',
+            children: [
+                {
+                    path: 'welcome',
+                    component: () => import('./components/Welcome'),
+                },
+                {
+                    path: '/users',
+                    component: () => import('./components/user/User.vue')
+                },
+            ]
         },
     ]
 })
@@ -24,11 +36,16 @@ const router = new VueRouter({
 router.beforeEach((to, _, next) => {
     if (to.path === '/login') next();
     const tokenStr = window.sessionStorage.getItem('token')
-    console.log(tokenStr)
+    // console.log(tokenStr)
     if (!tokenStr) next('/login')
     else {
         next()
     }
+})
+
+router.afterEach((to, from) => {
+    console.log(to.path)
+    window.sessionStorage.setItem('activePath', to.path);
 })
 
 export default router
