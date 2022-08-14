@@ -24,3 +24,12 @@ body,
     justify-content: flex-end;
     margin-top: 15px;
 }
+
+.treeTable{
+    margin-top: 15px;
+    font-size: 10px;
+}
+
+.el-cascader {
+  width: 100%;
+}

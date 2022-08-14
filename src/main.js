@@ -5,6 +5,7 @@ import ElementUI from 'element-ui'
 import './plugins/element.js'
 import './assets/css/global.css'
 import axios from 'axios'
+import TreeTable from 'vue-table-with-tree-grid'
 axios.defaults.baseURL = 'https://lianghj.top:8888/api/private/v1/'
 axios.interceptors.request.use(config => {
   // console.log(config)
@@ -14,6 +15,7 @@ axios.interceptors.request.use(config => {
 Vue.prototype.$http = axios
 
 Vue.config.productionTip = false
+Vue.component('tree-table', TreeTable)
 Vue.use(ElementUI)
 new Vue({
   router,
