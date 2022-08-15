@@ -35,7 +35,7 @@
             orderLev[scope.row.cat_level]
           }}</el-tag>
         </template>
-        <template slot="opt" slot-scope="scope">
+        <template slot="opt">
           <el-button type="primary" icon="el-icon-edit" size="mini"
             >编辑</el-button
           >
